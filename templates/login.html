@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Login</title>
+    <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+    <div class="form-wrapper">
+    <form action="/login" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required />
+        <br />
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required />
+        <br />
+        <input type="submit" value="Login" />
+    </form>
+
+    {# show the paragraph only if error is non-empty #}
+    {% if error != "" %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
+</div>
+</body> 
+</html>

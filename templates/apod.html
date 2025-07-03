@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="/static/apod.css">
+</head>
+<body>
+    <form action="/logout" method="get" style="text-align:right;">
+        <button type="submit" class="logout-btn">Logout</button>
+    </form>
+    <div class="apod-card">
+        <h1 class="apod-title">{{ title }}</h1>
+        <p class="apod-date">{{ date }}</p>
+        <div class="apod-media">
+            {% if media_type == "image" %}
+                <img src="{{ url }}" alt="NASA Astronomy Picture of the Day" />
+            {% else %}
+                <iframe src="{{ url }}" frameborder="0" allowfullscreen></iframe>
+            {% endif %}
+        </div>
+        <p class="apod-explanation">{{ explanation }}</p>
+    </div>
+</body>
+</html>
